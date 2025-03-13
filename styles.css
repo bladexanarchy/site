@@ -1,0 +1,93 @@
+body {
+    background-color: black;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navigation Bar (Now Only Links, No Background or Extra Styles) */
+.terminal-bar {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Links */
+.terminal-bar nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.terminal-bar nav a {
+    color: #00ff00;
+    text-decoration: none;
+    font-size: 1rem;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+}
+
+.terminal-bar nav a:hover {
+    opacity: 0.7;
+}
+
+/* Adjust terminal position */
+.terminal {
+    width: 80%;
+    height: 80%;
+    background: none;
+    padding: 20px;
+    box-shadow: none;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    margin-top: 50px; /* Pushes terminal below the top bar */
+}
+
+/* Typing Effect */
+.typed-text {
+    display: inline;
+    white-space: pre-wrap;
+}
+
+/* Cursor */
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background: #00ff00;
+    animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .terminal-bar {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .terminal-bar nav {
+        margin-top: 5px;
+        justify-content: center;
+    }
+
+    .terminal-bar nav a {
+        font-size: 0.9rem;
+    }
+}

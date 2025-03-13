@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randomizing Title</title>
+    <script>
+        function randomizeTitle() {
+            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            let newTitle = "";
+            for (let i = 0; i < 40; i++) { // Adjust the number of characters
+                newTitle += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.title = newTitle;
+        }
+
+        setInterval(randomizeTitle, 2); // Change title every 500ms
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="terminal-bar">
+    <div class="spacer"></div>
+    <nav>
+        <a href="https://github.com/bladexanarchy" target="_blank">GitHub</a>
+    </nav>
+</div>
+
+
+    <div class="terminal" id="terminal">
+        <span class="typed-text" id="typed-text"></span><span class="cursor" id="cursor">|</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
